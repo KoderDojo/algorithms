@@ -24,11 +24,19 @@ func bubbleSort(array []int, arrayLength int) {
 	j := arrayLength - 1
 
 	for j > 0 {
+		swap := false
+
 		for i := 0; i < j; i++ {
 			if array[i] > array[i+1] {
 				array[i], array[i+1] = array[i+1], array[i]
+				swap = true
 			}
 		}
+
+		if !swap {
+			break
+		}
+
 		j--
 	}
 }
