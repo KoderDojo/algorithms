@@ -20,8 +20,8 @@ package main
 
 import "fmt"
 
-func bubbleSort(array []int, arrayLength int) {
-	j := arrayLength - 1
+func bubbleSort(array []int) {
+	j := len(array) - 1
 
 	for j > 0 {
 		swap := false
@@ -42,12 +42,12 @@ func bubbleSort(array []int, arrayLength int) {
 }
 
 func main() {
+	// This is technically a slice.
 	var array = []int{7, 2, 1, 0, 10, 8, 6, 5, 3, 4, 9}
-	arrayLength := 11
 
-	bubbleSort(array, arrayLength)
+	bubbleSort(array)
 
-	for i := 0; i < arrayLength; i++ {
+	for i := 0; i < len(array); i++ {
 		fmt.Printf("% d", array[i])
 	}
 }
